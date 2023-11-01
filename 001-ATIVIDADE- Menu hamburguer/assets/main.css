@@ -1,44 +1,204 @@
+/* https://github.com/professor-varela/3TRI-IA23 */
 
-.bt-hamburguer{
-    --bt-size: 5rem;
-    --bt-padding: 1rem;
-    width: var(--bt-size);
-    height: var(--bt-size);
-    position: relative;
-    background:  linear-gradient(45deg, rgb(255, 0, 128) 0%, rgb(255, 217, 0) 100%);
-    border-radius: 10px;
-    border: none;
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
 }
 
-.bt-hamburguer span,
-.bt-hamburguer:before,
-.bt-hamburguer:after{
-    content: " ";
+:root {
+    --width-main-menu: 20rem;
+}
+
+.menu-hamburger {
+    --bt-size: 2.5rem;
+    --bt-padding: .4rem;
+    height: var(--bt-size);
+    width: var(--bt-size);
+    cursor: pointer;
+    position: fixed;
+    left: 1em;
+    bottom: 1em;
+    z-index: 1;
+    transition: .3s;
+}
+
+.menu-hamburger>span,
+.menu-hamburger::before,
+.menu-hamburger::after {
+    content: '';
     position: absolute;
-    display: block;
     left: var(--bt-padding);
     right: var(--bt-padding);
     height: 2px;
     background-color: black;
-    transition: 0.3s;
+    transition: .3s;
 }
 
-.bt-hamburguer:before{
+.menu-hamburger::before {
     top: var(--bt-padding);
 }
-.bt-hamburguer:hover::before{
-    transform: rotate(45deg) scaleX(1.35);
-    transform-origin: 0 0;
-}
 
-.bt-hamburguer:after{
+.menu-hamburger::after {
     bottom: var(--bt-padding);
 }
-.bt-hamburguer:hover::after{
-    transform: rotate(-45deg) scaleX(1.35);
-    transform-origin: 0 0;
+
+.menu-hamburger.opened {
+    left: 0;
+    transform: translateX(calc(var(--width-main-menu) - (var(--bt-size) / 2)));
 }
 
-.bt-hamburguer:hover > span{
+.menu-hamburger.opened::before {
+    transform-origin: 0 0;
+    transform: rotate(45deg) scaleX(1.4);
+}
+
+.menu-hamburger.opened::after {
+    transform-origin: 0 0;
+    transform: rotate(-45deg) scaleX(1.4);
+}
+
+.menu-hamburger.opened>span {
     transform: scale(0);
+}
+
+/* ------------------------------- */
+
+nav.main-menu {
+    position: fixed;
+    background-color: rgba(0 0 0 / .5);
+    width: var(--width-main-menu);
+    left: 0;
+    top: 0;
+    height: 100dvh;
+    transition: .3s;
+    transform: translateX(-100%);
+    backdrop-filter: blur(2.5px);
+    overflow: auto;
+}
+
+nav.main-menu a {
+    display: block;
+    background-color: rgba(255 255 255 / .9);
+    margin: 1rem;
+    border-radius: 5px;
+    padding: .5rem;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    gap: .5em;
+}
+
+nav.main-menu a:visited {
+    color: gray;
+}
+
+nav.main-menu.opened {
+    transform: translateX(0%);
+}
+
+/* ----------------------------------- */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+header,
+main,
+footer {
+    border: 2px solid red;
+    padding: 1rem;
+}
+
+body {
+    min-height: 100vh
+}
+
+header {
+    height: 200px;
+    background-color: black;
+}
+
+main {
+    min-height: calc(100dvh - 350px);
+}
+
+footer {
+    height: 150px;
+}
+
+/* ----------------------------------- */
+
+dialog:modal {
+    background-color: rgba(0 0 0 / .7);
+    color: #FFF;
+    border-radius: 10px;
+    border: 5px solid black;
+    padding: 2rem;
+}
+
+dialog:modal h1 {
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+}
+
+dialog:modal p {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    padding: 1rem 0;
+}
+
+dialog:modal .action {
+    display: flex;
+    gap: .25rem;
+    justify-content: flex-end;
+}
+
+dialog:modal button {
+    color: #FFF;
+    border: 2px solid;
+    font-size: 1.5rem;
+    padding: .5rem 1rem;
+    background-color: transparent;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+dialog:modal button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: red;
+    z-index: -1;
+    transform: translateY(100%);
+    transition: transform .3s;
+}
+
+dialog:modal button:hover::before {
+    transform: translateY(0%)
+}
+
+dialog:modal::backdrop {
+    background: rgba(0 0 0 / 0.8);
+    backdrop-filter: blur(2.5px);
+}
+
+dialog {
+    background-color: yellow;
 }
