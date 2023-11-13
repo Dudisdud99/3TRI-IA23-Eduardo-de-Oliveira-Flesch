@@ -2,10 +2,10 @@
 
 .material-symbols-outlined {
     font-variation-settings:
-        'FILL' 1,
-        'wght' 400,
-        'GRAD' 0,
-        'opsz' 24
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
 }
 
 :root {
@@ -14,58 +14,89 @@
     color: white;
 }
 
-.menu-hamburger {
-    --bt-size: 2.5rem;
-    --bt-padding: .4rem;
-    height: var(--bt-size);
-    width: var(--bt-size);
-    cursor: pointer;
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh
+}
+
+/* ---------------------- */
+
+.icon {
+    transition-duration: 0.5s;
+    position: absolute;
+    height: 3px;
+    width: 30px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 4px;
+}
+
+.icon.active {
+    transition: .3s ease-in-out;
+    background: transparent;
+}
+
+.menu-button {
+    display: grid;
+    place-items: center;
     position: fixed;
-    left: 1em;
-    top: 1em;
-    z-index: 3;
-    transition: .3s;
-    background: white;
+    top: 1rem;
+    right: 1rem;
+    width: 3rem;
+    height: 3rem;
+    /* background: #c5cdd0; */
+    background: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 4;
     border: none;
 }
 
-.menu-hamburger>span,
-.menu-hamburger::before,
-.menu-hamburger::after {
+.menu-button::before,
+.menu-button::after {
     content: '';
     position: absolute;
-    left: var(--bt-padding);
-    right: var(--bt-padding);
-    height: 2px;
-    background-color: black;
-    transition: .3s;
+    padding: auto;
+    top: 50%;
+    left: 50%;
+    width: 1.8rem;
+    height: 0.2rem;
+    background: #ffffff;
+    border-radius: 0.2rem;
+    transition: all 0.3s ease-in-out;
 }
 
-.menu-hamburger::before {
-    top: var(--bt-padding);
+.menu-button::before {
+    margin-top: -0.6rem;
+    transform: translate(-50%, -50%) rotate(180deg);
 }
 
-.menu-hamburger::after {
-    bottom: var(--bt-padding);
+.menu-button::after {
+    margin-top: 0.6rem;
+    transform: translate(-50%, -50%) rotate(180deg);
 }
 
-.menu-hamburger.opened {
-    left: 0;
-    transform: translateX(calc(var(--width-main-menu) - (var(--bt-size) / 2)));
+.menu-button.active::before {
+    margin-top: 0.1rem;
+    transform: translate(-50%, -50%) rotate(45deg);
 }
 
-.menu-hamburger.opened::before {
-    transform-origin: 0 0;
-    transform: rotate(45deg) scaleX(1.4);
+.menu-button.active::after {
+    margin-top: 0.1rem;
+    transform: translate(-50%, -50%) rotate(-45deg);
 }
 
-.menu-hamburger.opened::after {
-    transform-origin: 0 0;
-    transform: rotate(-45deg) scaleX(1.4);
-}
-
-.menu-hamburger.opened>span {
-    transform: scale(0);
+.menu-button.active{
+    transition: 0.3s;
+    background-color: #c5cdd0;
 }
 
 /* ------------------------------- */
@@ -107,7 +138,7 @@ nav.menu.opened {
 
 
 
-nav.main-nav{
+nav.main-nav {
     position: fixed;
     z-index: 1;
     width: 100%;
@@ -117,35 +148,26 @@ nav.main-nav{
 
 /* ----------------------------------- */
 
-* {
-    box-sizing: border-box;
-}
-
-html,
-body {
-    margin: 0;
-    scroll-behavior: smooth;
-}
-
-header,
-main,
-footer {
-
-}
-
-body {
-    min-height: 100vh
-}
 
 header {
-    height: 200px;
-    background-color: black;
-    display: flex;
     justify-content: center;
 }
 
 .logo{
+    width: 100%;
+}
+
+.conteudo{
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    top: 50rem;
+}
+
+.degrade{
     height: 15rem;
+    width: 100%;
+    background: linear-gradient(transparent,black);
 }
 
 main {
@@ -154,6 +176,7 @@ main {
 
 footer {
     height: 150px;
+    
 }
 
 /* ----------------------------------- */
