@@ -1,5 +1,5 @@
 const btHamburger = document.querySelector(".menu-hamburger")
-const mainMenu = document.querySelector("nav.main-menu")
+const mainMenu = document.querySelector("nav.menu")
 
 btHamburger.addEventListener("click", () => {
   btHamburger.classList.toggle("opened")

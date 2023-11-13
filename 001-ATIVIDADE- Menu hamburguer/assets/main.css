@@ -22,8 +22,8 @@
     cursor: pointer;
     position: fixed;
     left: 1em;
-    bottom: 1em;
-    z-index: 1;
+    top: 1em;
+    z-index: 3;
     transition: .3s;
     background: white;
     border: none;
@@ -70,20 +70,21 @@
 
 /* ------------------------------- */
 
-nav.main-menu {
+nav.menu {
     position: fixed;
     background-color: rgba(0 0 0 / .5);
     width: var(--width-main-menu);
-    left: 0;
+    right: 0;
     top: 0;
     height: 100dvh;
     transition: .3s;
-    transform: translateX(-100%);
+    transform: translateX(100%);
     backdrop-filter: blur(2.5px);
     overflow: auto;
+    z-index: 2;
 }
 
-nav.main-menu a {
+nav.menu a {
     display: block;
     background-color: rgba(255 255 255 / .9);
     margin: 1rem;
@@ -96,12 +97,22 @@ nav.main-menu a {
     gap: .5em;
 }
 
-nav.main-menu a:visited {
+nav.menu a:visited {
     color: gray;
 }
 
-nav.main-menu.opened {
+nav.menu.opened {
     transform: translateX(0%);
+}
+
+
+
+nav.main-nav{
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 4rem;
+    background-color: rgb(36, 36, 43);
 }
 
 /* ----------------------------------- */
