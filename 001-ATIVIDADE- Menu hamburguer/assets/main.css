@@ -151,10 +151,9 @@ nav.main-nav {
 
 
 header{
-    height: calc(100vh - var(--width-main-nav));
+    height: calc(110vh - var(--width-main-nav));
     position: relative;
     top: var(--width-main-nav);
-    width:100%;
 }
 
 .imgFundo{
@@ -171,12 +170,12 @@ header{
     bottom: 0;
 }
 
-.degrade2{
+.degrade2 {
     position: absolute;
     height: 100%;
-    width: 50rem;
-    background: linear-gradient(to left,transparent 60%,rgb(0, 0, 0));
+    background: linear-gradient(to left, transparent 40%, rgb(0, 0, 0));
     bottom: 0;
+    right: 0;
 }
 
 .carrocel{
