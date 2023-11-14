@@ -8,8 +8,9 @@
     'opsz' 24
 }
 
-:root {
+html{
     --width-main-menu: 20rem;
+    --width-main-nav: 4rem;
     background-color: black;
     color: white;
 }
@@ -112,7 +113,7 @@ nav.menu {
     transform: translateX(100%);
     backdrop-filter: blur(2.5px);
     overflow: auto;
-    z-index: 2;
+    z-index: 3;
 }
 
 nav.menu a {
@@ -140,21 +141,50 @@ nav.menu.opened {
 
 nav.main-nav {
     position: fixed;
-    z-index: 1;
+    z-index: 3;
     width: 100%;
-    height: 4rem;
+    height: var(--width-main-nav);
     background-color: rgb(36, 36, 43);
 }
 
 /* ----------------------------------- */
 
 
-header {
-    justify-content: center;
+header{
+    position: relative;
 }
 
-.logo{
+.imgFundo{
     width: 100%;
+    margin-top: var(--width-main-nav);
+}
+
+.degrade{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(transparent 40%,black);
+    bottom: 0;
+}
+
+.degrade2{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to left,transparent 60%,rgba(0, 0, 0, 0.774));
+    bottom: 0;
+}
+
+.carrocel{
+    position: absolute;
+    height: 50%;
+    width: 50%;
+    top: 0;
+    gap: 0;
+    margin-top: 10rem;
+}
+
+.carrocel p {
 }
 
 .conteudo{
@@ -163,13 +193,6 @@ header {
     width: 100%;
     top: 50rem;
 }
-
-.degrade{
-    height: 15rem;
-    width: 100%;
-    background: linear-gradient(transparent,black);
-}
-
 main {
     min-height: calc(100dvh - 350px);
 }
