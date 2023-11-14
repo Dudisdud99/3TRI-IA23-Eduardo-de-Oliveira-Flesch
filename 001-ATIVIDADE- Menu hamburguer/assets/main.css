@@ -187,7 +187,8 @@ header{
     margin-top: 10rem;
 }
 
-.carrocel p {
+.carrocel>img {
+    height: 10rem;
 }
 
 .conteudo{
