@@ -2,15 +2,17 @@
 
 // const widthNav = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--width-main-nav'));
 
-// const imgFundo = document.querySelector(".imgFundo");
-// const imgFundoHeight = imgFundo.clientHeight;
-// const degrade = document.querySelector(".degrade");
 // const degradeHeight = degrade.clientHeight;
-
 //  .style.top = imgFundoHeight //- degradeHeight + widthNav + "px";
 
+// var altura = window.screen.height;
+// var largura = window.screen.width;
 
-// console.log(imgFundoHeight);
+// const imgFundo = document.querySelector('.imgFundo');
+// const degrade2 = document.querySelector(".degrade2");
+// const imgFundoWidth = imgFundo.clientWidth;
+// degrade2.style.left = largura - imgFundoWidth + "px";
+// console.log(imgFundoWidth);
 
 // -----------------------------------------------------------------------
 
@@ -43,11 +45,9 @@ const imagens = [
   'assets/img/deathNote.webp',
   'assets/img/dr-stone.jpg',
   'assets/img/naruto.webp',
-  'assets/img/dragon-ball-z.jpg'
 ];
 
 // Referências aos elementos HTML
-const imgFundo = document.querySelector('.imgFundo');
 const carrocel = document.querySelector('.carrocel');
 
 // Variável para rastrear a posição atual no carrossel
