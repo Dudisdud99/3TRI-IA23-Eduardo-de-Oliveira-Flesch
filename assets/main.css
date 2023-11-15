@@ -11,6 +11,7 @@
 html{
     --width-main-menu: 20rem;
     --width-main-nav: 4rem;
+    --width-moverCarrocel: 4rem;
     background-color: black;
     color: white;
 }
@@ -269,11 +270,58 @@ header{
 }
 
 section{
-    display: flex;
+    height: 26rem;
     width: 100%;
-    height: 25rem;
-    gap: 1rem;
-    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+.carrocelThumb{
+    display: flex;
+    gap: 15px;
+    overflow-x: scroll;
+    width: 100%;
+    height: 100%;
+}
+
+.carrocelThumb>:nth-child(1){
+    margin-left: 4rem;
+}
+
+.proximo,
+.anterior{
+    height: 95%;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    z-index: 3;
+    cursor: pointer;
+    bottom: 0;
+}
+
+.anterior:hover{
+    background:linear-gradient(to left, transparent, rgba(0, 0, 0, 0.822));
+}
+.proximo:hover{
+    background:linear-gradient(to right, transparent, rgba(0, 0, 0, 0.822));
+}
+
+.proximo>span,
+.anterior>span{
+    font-size: var(--width-moverCarrocel);
+    margin-bottom: 2rem;
+}
+
+.proximo:hover>span,
+.anterior:hover>span{
+    color: orangered;
+}
+
+.proximo{
+    right: 0;
+}
+.anterior{
+    left: 0;
 }
 
 .caixa{
@@ -281,6 +329,7 @@ section{
     height: 100%;
     width: 15rem;
     display: flex;
+    flex: 0 0 auto; 
     justify-content: center;
     align-items: center;
     cursor: pointer;

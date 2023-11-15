@@ -77,7 +77,7 @@ async function main() {
   setInterval(proximaImagem, 4000);
 
 
-  
+
   const indicadores = document.querySelectorAll('.indicador');
 
   function atualizarIndicadores() {
@@ -101,8 +101,43 @@ async function main() {
       atualizarIndicadores();
     });
   });
-  
+
   atualizarIndicadores();
+
+
+
+  const carrocelThumb = document.querySelector('.carrocelThumb');
+
+  window.moverCarrossel = function (direcao) {
+    const caixaWidth = document.querySelector('.caixa').offsetWidth;
+    const espacoEntreCaixas = 15;
+    const elementosParaMover = 3;
+
+    const scrollAmount = (caixaWidth + espacoEntreCaixas) * elementosParaMover;
+    const currentPosition = carrocelThumb.scrollLeft;
+    let newPosition;
+
+    if (direcao === 1) {
+      // Rolar para a direita
+      newPosition = currentPosition + scrollAmount;
+    } else {
+      // Rolar para a esquerda
+      newPosition = currentPosition - scrollAmount;
+    }
+
+    carrocelThumb.scrollTo({
+      left: newPosition,
+      behavior: 'smooth'
+    });
+  }
+
+  
+
+  if (distanciaInicial < elementosVisiveis) {
+    caixa.style.filter = 'brightness(1)';
+  } else {
+    caixa.style.filter = 'brightness(0.2)';
+  }
 }
 
 main()
