@@ -28,24 +28,9 @@ async function main() {
   const request = await fetch("assets/carrocel.json")
   const carrocel = await request.json()
 
-  // Crie um array com os caminhos das imagens
-  const imagens = [
-    'assets/img/deathNote.webp',
-    'assets/img/dr-stone.jpg',
-    'assets/img/naruto.webp',
-  ];
-
-  const logos = [
-    'assets/img/deathNote-logo.png',
-    'assets/img/Dr._Stone_logo.webp',
-    'assets/img/naruto-logo.png',
-  ];
-
-
   var imgFundoWidth = imgFundo.clientWidth;
   degrade2.style.width = `${imgFundoWidth}px`;
 
-  // Variável para rastrear a posição atual no carrossel
   let posicaoAtual = 0;
 
   function atualizarCarrossel() {
@@ -62,12 +47,11 @@ async function main() {
         transicao.classList.remove('darken');
 
         sinopse.innerHTML = carrocel[posicaoAtual].sinopse
-        imgLogo.src = carrocel[posicaoAtual].img
-        imgFundo.src = imagens[posicaoAtual]
+        imgLogo.src = carrocel[posicaoAtual].imgLogo
+        imgFundo.src = carrocel[posicaoAtual].imgAnime
       }, { once: true }); // Ouvinte que será chamado apenas uma vez
     }
   }
-
 
   // function atualizarCarrossel() {
   //   // Verifica se a posição atual é válida
@@ -92,6 +76,8 @@ async function main() {
   }
   setInterval(proximaImagem, 4000);
 
+
+  
   const indicadores = document.querySelectorAll('.indicador');
 
   function atualizarIndicadores() {
