@@ -201,6 +201,30 @@ header{
     font-size: 15px;
     letter-spacing: 0.5px;
     line-height: 28px;
+    height: 10rem;
+}
+
+.indicadores {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    height: 5rem;
+    align-items: center;
+}
+
+.indicador {
+    width: 2rem;
+    height: 1rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 100px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.indicador.ativo {
+    background-color: rgb(255, 115, 0);
+    width: 5rem;
+    transition: 0.3s;
 }
 
 .assistir{
@@ -259,12 +283,13 @@ section{
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .caixa:hover .janela{
     visibility: visible;
     opacity: 1;
-    transition: 0.15s;
+    transition: 0.2s;
 }
 
 .itens{
@@ -288,12 +313,11 @@ section{
 .janela{
     width: 100%;
     height: 100%;
-    background: purple;
     position: absolute;
     opacity: 0;
     visibility: hidden;
+    background: rgba(0, 0, 255, 0.911);
 }
-
 
 main {
     min-height: calc(100dvh - 350px);

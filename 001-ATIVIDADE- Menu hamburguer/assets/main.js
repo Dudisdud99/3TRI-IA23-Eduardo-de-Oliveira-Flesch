@@ -86,15 +86,37 @@ async function main() {
   function proximaImagem() {
     posicaoAtual++;
     if (posicaoAtual >= carrocel.length) {
-      posicaoAtual = 0; // Volta para a primeira imagem se atingir o final
+      posicaoAtual = 0;
     }
     atualizarCarrossel();
   }
-
-  // Configura um intervalo para trocar automaticamente as imagens a cada 5 segundos
   setInterval(proximaImagem, 4000);
 
-  // carrocel.addEventListener('click', proximaImagem);
+  const indicadores = document.querySelectorAll('.indicador');
+
+  function atualizarIndicadores() {
+    indicadores.forEach(indicador => indicador.classList.remove('ativo'));
+    indicadores[posicaoAtual].classList.add('ativo');
+  }
+
+  function proximaImagem() {
+    posicaoAtual++;
+    if (posicaoAtual >= carrocel.length) {
+      posicaoAtual = 0;
+    }
+    atualizarCarrossel();
+    atualizarIndicadores();
+  }
+
+  indicadores.forEach((indicador, index) => {
+    indicador.addEventListener('click', () => {
+      posicaoAtual = index;
+      atualizarCarrossel();
+      atualizarIndicadores();
+    });
+  });
+  
+  atualizarIndicadores();
 }
 
 main()
