@@ -131,13 +131,16 @@ async function main() {
     });
   }
 
-  
 
-  if (distanciaInicial < elementosVisiveis) {
-    caixa.style.filter = 'brightness(1)';
-  } else {
-    caixa.style.filter = 'brightness(0.2)';
-  }
+
+  // if (distanciaInicial < elementosVisiveis) {
+  //   caixa.style.filter = 'brightness(1)';
+  // } else {
+  //   caixa.style.filter = 'brightness(0.2)';
+  // }
+
+  console.log(carrocel.length)
+
 }
 
 main()
