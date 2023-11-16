@@ -10,11 +10,19 @@ button.addEventListener('click', () => {
 });
 // ----------------------------------------------------------------------------------
 
-const btDialog = document.querySelector(".bt-dialog")
-const btModal = document.querySelector(".bt-modal")
+const caixas = document.querySelectorAll('.caixa');
 const dialog = document.querySelector("dialog")
 
+caixas.forEach(caixa => {
+  caixa.addEventListener('click', () => {
+    dialog.showModal();
+    document.body.style.overflow = 'hidden';
+  });
+});
 
+dialog.addEventListener('close', () => {
+  document.body.style.overflow = ''; 
+});
 // --------------------------------------------
 
 const imgFundo = document.querySelector('.imgFundo');
@@ -140,7 +148,6 @@ async function main() {
   // }
 
   console.log(carrocel.length)
-
 }
 
 main()
