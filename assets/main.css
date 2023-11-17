@@ -36,8 +36,8 @@ body {
 .icon {
     transition-duration: 0.5s;
     position: absolute;
-    height: 3px;
-    width: 30px;
+    height: 0.3vh;
+    width: 2vw;
     background-color: rgb(255, 255, 255);
     border-radius: 4px;
 }
@@ -70,8 +70,8 @@ body {
     padding: auto;
     top: 50%;
     left: 50%;
-    width: 1.8rem;
-    height: 0.2rem;
+    height: 0.3vh;
+    width: 2vw;
     background: #ffffff;
     border-radius: 0.2rem;
     transition: all 0.3s ease-in-out;
@@ -374,8 +374,20 @@ section {
     position: absolute;
     opacity: 0;
     visibility: hidden;
-    /* background: url("assets/img/deathNote.webp") no-repeat; */
-    background: blue;
+    background-image: url('img/deathNote.webp');
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* background: blue; */
+}
+
+.janela::before {
+    content: ''; 
+    position: absolute; 
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.842); 
 }
 
 main {
