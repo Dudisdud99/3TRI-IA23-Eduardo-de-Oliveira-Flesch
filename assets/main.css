@@ -374,8 +374,8 @@ section {
     position: absolute;
     opacity: 0;
     visibility: hidden;
-    background-image: url('img/deathNote.webp');
-    background-size: contain;
+    background-image: url('img/deathNote-thumb.jpe');
+    background-size:cover;
     background-repeat: no-repeat;
     /* background: blue; */
 }
@@ -387,7 +387,7 @@ section {
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.842); 
+    background-color: rgba(0, 0, 0, 0.699); 
 }
 
 main {
