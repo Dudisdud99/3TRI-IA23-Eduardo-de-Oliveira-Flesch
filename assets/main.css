@@ -2,13 +2,13 @@
 
 .material-symbols-outlined {
     font-variation-settings:
-    'FILL' 1,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 24
+        'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
 }
 
-html{
+html {
     --width-main-menu: 20rem;
     --width-main-nav: 4rem;
     --width-moverCarrocel: 4rem;
@@ -97,7 +97,7 @@ body {
     transform: translate(-50%, -50%) rotate(-45deg);
 }
 
-.menu-button.active{
+.menu-button.active {
     transition: 0.3s;
     background-color: #c5cdd0;
 }
@@ -152,23 +152,23 @@ nav.main-nav {
 /* ----------------------------------- */
 
 
-header{
+header {
     height: 100vh;
     position: relative;
     top: var(--width-main-nav);
 }
 
-.imgFundo{
+.imgFundo {
     position: absolute;
     height: 100%;
     right: 0;
 }
 
-.degrade{
+.degrade {
     position: absolute;
     height: 100%;
     width: 100%;
-    background: linear-gradient(transparent 40%,black);
+    background: linear-gradient(transparent 40%, black);
     bottom: 0;
 }
 
@@ -180,7 +180,7 @@ header{
     right: 0;
 }
 
-.carrocel{
+.carrocel {
     font-family: 'Noto Sans', sans-serif;
     position: absolute;
     height: 50%;
@@ -194,11 +194,12 @@ header{
 .imgLogo {
     height: 8rem;
 }
-.imgLogo>img{
+
+.imgLogo>img {
     height: 100%;
 }
 
-.carrocel p{
+.carrocel p {
     font-size: 15px;
     letter-spacing: 0.5px;
     line-height: 28px;
@@ -228,7 +229,7 @@ header{
     transition: 0.3s;
 }
 
-.assistir{
+.assistir {
     background-color: rgb(255, 115, 0);
     width: 15rem;
     height: 2.5rem;
@@ -241,7 +242,7 @@ header{
     margin-top: 1.5rem;
 }
 
-.assistir>.play{
+.assistir>.play {
     font-size: 25px;
 }
 
@@ -253,7 +254,8 @@ header{
     height: 100%;
     background: rgba(0, 0, 0, 0);
     transition: background 0.5s ease-in-out;
-    pointer-events: none; /* Permite clicar nos elementos por baixo da transição */
+    pointer-events: none;
+    /* Permite clicar nos elementos por baixo da transição */
 }
 
 .transicao.darken {
@@ -262,21 +264,21 @@ header{
 
 /* -------------------- */
 
-.conteudo{
+.conteudo {
     position: absolute;
     z-index: 2;
     width: 100%;
     top: 95vh;
 }
 
-section{
+section {
     height: 26rem;
     width: 100%;
     position: relative;
     z-index: 2;
 }
 
-.carrocelThumb{
+.carrocelThumb {
     display: flex;
     gap: 15px;
     overflow-x: hidden;
@@ -284,12 +286,12 @@ section{
     height: 100%;
 }
 
-.carrocelThumb>:nth-child(1){
+.carrocelThumb>:nth-child(1) {
     margin-left: 4rem;
 }
 
 .proximo,
-.anterior{
+.anterior {
     height: 95%;
     display: flex;
     align-items: center;
@@ -297,75 +299,83 @@ section{
     z-index: 3;
     cursor: pointer;
     bottom: 0;
-}
-
-.anterior:hover{
-    background:linear-gradient(to left, transparent, rgba(0, 0, 0, 0.822));
-}
-.proximo:hover{
-    background:linear-gradient(to right, transparent, rgba(0, 0, 0, 0.822));
+    transition: 0.1s;
 }
 
 .proximo>span,
-.anterior>span{
+.anterior>span {
     font-size: var(--width-moverCarrocel);
     margin-bottom: 2rem;
+    background: rgba(255, 255, 255, 1.0);
+}
+
+.proximo>span{
+    background: radial-gradient(at right center, rgb(0, 0, 0), transparent);
+}
+
+.anterior>span{
+    background: radial-gradient(at left center, rgb(0, 0, 0), transparent);
 }
 
 .proximo:hover>span,
-.anterior:hover>span{
+.anterior:hover>span {
     color: rgb(255, 115, 0);
+    /* transform: scale(130%); */
+    transition: 0.1s;
 }
 
-.proximo{
+.proximo {
     right: 0;
 }
-.anterior{
+
+.anterior {
     left: 0;
 }
 
-.caixa{
+.caixa {
     position: relative;
     height: 100%;
-    width: 15rem;
+    width: 17vw;
     display: flex;
-    flex: 0 0 auto; 
+    flex: 0 0 auto;
     justify-content: center;
     align-items: center;
     cursor: pointer;
 }
 
-.caixa:hover .janela{
+.caixa:hover .janela {
     visibility: visible;
     opacity: 1;
     transition: 0.2s;
 }
 
-.itens{
+.itens {
     width: 90%;
     height: 90%;
     display: flex;
     flex-direction: column;
-} 
-.nome{
+}
+
+.nome {
     width: 100%;
     height: 10%;
     display: flex;
     align-items: center;
 }
 
-.imgAnime{
+.imgAnime {
     width: 100%;
     height: 90%;
 }
 
-.janela{
+.janela {
     width: 100%;
     height: 100%;
     position: absolute;
     opacity: 0;
     visibility: hidden;
-    background: rgba(0, 0, 255, 0.911);
+    /* background: url("assets/img/deathNote.webp") no-repeat; */
+    background: blue;
 }
 
 main {
@@ -374,14 +384,30 @@ main {
 
 footer {
     height: 150px;
-    
+
 }
 
 /* ----------------------------------- */
 
-dialog{
+dialog {
     position: fixed;
     width: 70vw;
     height: 80vh;
-    background: black;
+    background: rgb(36, 36, 39);
+    border: none;
+}
+
+.fechar {
+    right: 1rem;
+    top: 1rem;
+    position: absolute;
+    color: white;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.fechar:hover {
+    color: rgb(255, 115, 0);
+    transform: scale(130%);
+    transition: 0.1s;
 }
