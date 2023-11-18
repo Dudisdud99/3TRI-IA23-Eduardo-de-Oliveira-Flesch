@@ -12,6 +12,7 @@ html {
     --width-main-menu: 20rem;
     --width-main-nav: 4rem;
     --width-moverCarrocel: 4rem;
+    --quantidade-caixas: 0;
     background-color: black;
     color: white;
 }
@@ -282,12 +283,17 @@ section {
     display: flex;
     gap: 15px;
     overflow-x: hidden;
+    overflow-y: hidden;
     width: 100%;
     height: 100%;
 }
 
 .carrocelThumb>:nth-child(1) {
     margin-left: 4rem;
+}
+
+.carrocelThumb>:nth-last-child(1) {
+    margin-right: 4rem;
 }
 
 .proximo,
@@ -387,7 +393,21 @@ section {
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.699); 
+    background-color: rgba(36, 36, 43, 0.829); 
+}
+
+.janela>div{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    font-size: 15px;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.nomeJanela{
+    font-size: 20px;
 }
 
 main {
@@ -405,8 +425,9 @@ dialog {
     position: fixed;
     width: 70vw;
     height: 80vh;
-    background: rgb(36, 36, 39);
+    background: rgb(36, 36, 43);
     border: none;
+    outline: none;
 }
 
 .fechar {

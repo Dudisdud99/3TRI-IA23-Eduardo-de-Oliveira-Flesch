@@ -8,24 +8,6 @@ button.addEventListener('click', () => {
   nav.classList.toggle('opened');
   icon.classList.toggle('active');
 });
-// ----------------------------------------------------------------------------------
-
-const caixas = document.querySelectorAll('.caixa');
-const dialog = document.querySelector("dialog")
-const fechar = document.querySelector(".fechar")
-
-caixas.forEach(caixa => {
-  caixa.addEventListener('click', () => {
-    dialog.showModal();
-    document.body.style.overflow = 'hidden';
-  });
-});
-
-dialog.addEventListener('close', () => {
-  document.body.style.overflow = '';
-});
-
-fechar.addEventListener("click", () => dialog.close())
 
 // --------------------------------------------
 
@@ -34,16 +16,17 @@ const degrade2 = document.querySelector('.degrade2');
 const imgLogo = document.querySelector('.imgLogo>img');
 const sinopse = document.querySelector('.carrocel p');
 const carrocelThumb = document.querySelector('.carrocelThumb');
+const indicadores = document.querySelectorAll('.indicador');
 
 const duracaoIntervalo = 4000
-
 let posicaoAtual = 0;
 let intervalIdCarrossel;
 
-async function main() {
+
+async function header() {
   const request = await fetch("assets/carrocel.json");
   const carrocel = await request.json();
-  const indicadores = document.querySelectorAll('.indicador');
+
 
   async function preCarregarImagens() {
     const imagensPreCarregadas = [];
@@ -104,7 +87,6 @@ async function main() {
     }
   }
 
-
   indicadores.forEach((indicador, index) => {
     indicador.addEventListener('click', () => {
       posicaoAtual = index;
@@ -117,14 +99,115 @@ async function main() {
 
   iniciarIntervaloCarrossel();
   atualizarIndicadores();
+
+  // ----------------------------------------------------
+  // alt => elAlternativas.innerHTML += `<button>${alt}</button>`
+
 }
 
-main();
+header();
+
+// ----------------------------------------------------
+
+async function carregarCaixas() {
+  const requestAnimes = await fetch("assets/animes.json");
+  const animes = await requestAnimes.json();
+
+  for (let i = 0; i < 5; i++) {
+    const caixa = document.createElement('div');
+    caixa.className = 'caixa';
+    caixa.innerHTML = `
+      <div class="janela">
+        <div>
+          <p class="nomeJanela">${animes[0].nome}</p>
+          <p class="temporadas">${animes[0].quantTemp} Temporadas</p>
+          <p class="episodeos">${animes[0].quantEps} Episódios</p>
+          <p class="sinopseJanela">${animes[0].sinopse}</p>
+        </div>
+      </div>
+      <div class="itens">
+        <img src="assets/img/deathNote-thumb.jpe" class="imgAnime"></img>
+        <div class="nome">Death Note</div>
+      </div>
+    `;
+    carrocelThumb.appendChild(caixa);
+  }
+
+  for (let i = 0; i < 5; i++) {
+    const caixa = document.createElement('div');
+    caixa.className = 'caixa';
+    caixa.innerHTML = `
+      <div class="janela">
+        <div>
+          <p class="nomeJanela">${animes[0].nome}</p>
+          <p class="temporadas">${animes[0].quantTemp} Temporadas</p>
+          <p class="episodeos">${animes[0].quantEps} Episódios</p>
+          <p class="sinopseJanela">${animes[0].sinopse}</p>
+        </div>
+      </div>
+      <div class="itens">
+        <img src="assets/img/dr-stone.jpg" class="imgAnime"></img>
+        <div class="nome">Death Note</div>
+      </div>
+    `;
+    carrocelThumb.appendChild(caixa);
+  }
+
+  for (let i = 0; i < 5; i++) {
+    const caixa = document.createElement('div');
+    caixa.className = 'caixa';
+    caixa.innerHTML = `
+      <div class="janela">
+        <div>
+          <p class="nomeJanela">${animes[0].nome}</p>
+          <p class="temporadas">${animes[0].quantTemp} Temporadas</p>
+          <p class="episodeos">${animes[0].quantEps} Episódios</p>
+          <p class="sinopseJanela">${animes[0].sinopse}</p>
+        </div>
+      </div>
+      <div class="itens">
+        <img src="assets/img/deathNote-thumb.jpe" class="imgAnime"></img>
+        <div class="nome">Death Note</div>
+      </div>
+    `;
+    carrocelThumb.appendChild(caixa);
+  }
+
+  adicionarEventListeners();
+}
+
+// function atualizarQuantidadeCaixas() {
+//   const quantidadeCaixas = document.querySelectorAll('.caixa').length;
+//   document.documentElement.style.setProperty('--quantidade-caixas', quantidadeCaixas);
+// }
+
+// atualizarQuantidadeCaixas();
+
+function adicionarEventListeners() {
+  const caixasClick = document.querySelectorAll('.caixa');
+  const dialog = document.querySelector("dialog");
+  const fechar = document.querySelector(".fechar");
+
+  caixasClick.forEach(caixa => {
+    caixa.addEventListener('click', () => {
+      dialog.showModal();
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  dialog.addEventListener('close', () => {
+    document.body.style.overflow = '';
+  });
+
+  fechar.addEventListener("click", () => dialog.close());
+}
+
+carregarCaixas();
 
 function moverCarrocel(direcao) {
   const caixaWidth = document.querySelector('.caixa').offsetWidth;
   const espacoEntreCaixas = 15;
-  const elementosParaMover = 3;
+  const elementosParaMover = 5;
 
   const scrollAmount = (caixaWidth + espacoEntreCaixas) * elementosParaMover;
   const currentPosition = carrocelThumb.scrollLeft;
