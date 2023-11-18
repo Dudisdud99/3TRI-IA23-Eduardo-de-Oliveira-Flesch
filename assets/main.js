@@ -137,7 +137,7 @@ async function carregarCaixas() {
     const caixa = document.createElement('div');
     caixa.className = 'caixa';
     caixa.innerHTML = `
-      <div class="janela">
+      <div class="janela dr">
         <div>
           <p class="nomeJanela">${animes[0].nome}</p>
           <p class="temporadas">${animes[0].quantTemp} Temporadas</p>
@@ -146,8 +146,8 @@ async function carregarCaixas() {
         </div>
       </div>
       <div class="itens">
-        <img src="assets/img/dr-stone.jpg" class="imgAnime"></img>
-        <div class="nome">Death Note</div>
+        <img src="assets/img/dr-stone-thumb.jpg" class="imgAnime"></img>
+        <div class="nome">Dr. Stone</div>
       </div>
     `;
     carrocelThumb.appendChild(caixa);
