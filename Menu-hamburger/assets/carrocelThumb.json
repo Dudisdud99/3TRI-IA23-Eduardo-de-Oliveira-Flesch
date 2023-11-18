@@ -1,0 +1,27 @@
+[
+    {
+      "sinopse": "Light Yagami é um estudante primoroso, com um currículo impecável, popular com as garotas. Mas sua vida muda quando um Shinigami lhe oferece um caderno capaz de matar qualquer pessoa que ele quiser.",
+      "imgLogo": "assets/img/Death-Note-Logo.png",
+      "imgAnime": "assets/img/deathNote.webp"
+    },
+    {
+      "sinopse": "Milhares de anos após um misterioso fenômeno transformar a humanidade inteira em pedra, desperta um garoto extraordinariamente inteligente e motivado pela ciência - Senku Ishigami ...",
+      "imgLogo": "assets/img/Dr._Stone_logo.webp",
+      "imgAnime": "assets/img/dr-stone.jpg"
+    },
+    {
+      "sinopse": "A Vila Oculta da Folha é lar dos ninjas mais sorrateiros. Mas doze anos atrás, uma temível Raposa de Nove Caudas aterrorizou a vila, até ser derrotada e selada no corpo de um garoto recém-nascido.",
+      "imgLogo": "assets/img/naruto-logo.png",
+      "imgAnime": "assets/img/naruto.webp"
+    },
+    {
+      "sinopse": "Japão, era Taisho. Tanjiro, um bondoso jovem que ganha a vida vendendo carvão, descobre que sua família foi massacrada por um demônio. Nezuko, sua irmã mais nova e única sobrevivente, também foi transformada num demônio. Tanjiro decide ...",
+      "imgLogo": "assets/img/demon-slayer-logo.png",
+      "imgAnime": "assets/img/demon-slayer.jpg"
+    },
+    {
+      "sinopse": "Mikami Satoru, funcionário de uma megacorporação, é apunhalado por um assassino nas ruas e renasce num mundo paralelo... Mas ele renasce como um slime!",
+      "imgLogo": "assets/img/tensei-slime-logo.webp",
+      "imgAnime": "assets/img/tensei-slime.jpg"
+    }
+  ]
