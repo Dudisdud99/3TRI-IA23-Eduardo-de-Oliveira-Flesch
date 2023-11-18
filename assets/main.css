@@ -354,6 +354,11 @@ section {
     opacity: 1;
     transition: 0.2s;
 }
+.caixa:hover .janela::before {
+    visibility: visible;
+    opacity: 1;
+    transition: 0.2s;
+}
 
 .itens {
     width: 90%;
@@ -383,7 +388,7 @@ section {
     background-image: url('img/deathNote-thumb.jpe');
     background-size:cover;
     background-repeat: no-repeat;
-    /* background: blue; */
+    transition: 0.2s;
 }
 
 .dr{
@@ -391,13 +396,16 @@ section {
 }
 
 .janela::before {
+    transition: 0.2s;
+    visibility: visible;
+    opacity: 0;
     content: ''; 
     position: absolute; 
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: rgba(36, 36, 43, 0.829); 
+    background-color: rgba(36, 36, 43, 0.932); 
 }
 
 .janela>div{
@@ -427,8 +435,8 @@ footer {
 
 dialog {
     position: fixed;
-    width: 70vw;
-    height: 80vh;
+    width: 100%;
+    height: 100%;
     background: rgb(36, 36, 43);
     border: none;
     outline: none;
@@ -441,10 +449,20 @@ dialog {
     color: white;
     cursor: pointer;
     transition: 0.1s;
+    background: black;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
 }
 
-.fechar:hover {
+.fechar > *{
+    transition: 0.2s;
+}
+
+.fechar:hover > *{
     color: rgb(255, 115, 0);
-    transform: scale(130%);
+    transform: scale(140%);
     transition: 0.1s;
 }

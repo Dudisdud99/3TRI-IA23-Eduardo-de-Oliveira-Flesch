@@ -26,19 +26,21 @@ let intervalIdCarrossel;
 async function header() {
   const request = await fetch("assets/carrocel.json");
   const carrocel = await request.json();
-
-
+  
+  var imgFundoWidth = imgFundo.clientWidth;
+  degrade2.style.width = `${imgFundoWidth}px`;
+  
   async function preCarregarImagens() {
     const imagensPreCarregadas = [];
-
+    
     for (let i = 0; i < carrocel.length; i++) {
       const img = new Image();
       img.src = carrocel[i].imgAnime;
       const imgLogo = new Image();
       imgLogo.src = carrocel[i].imgLogo;
-
+      
       await Promise.all([img.decode(), imgLogo.decode()]);
-
+      
       imagensPreCarregadas.push({ img, imgLogo });
     }
 
@@ -46,15 +48,13 @@ async function header() {
   }
 
   const imagensPreCarregadas = await preCarregarImagens();
-
-  var imgFundoWidth = imgFundo.clientWidth;
-  degrade2.style.width = `${imgFundoWidth}px`;
-
+  
+  
   imgFundo.onload = function () {
     imgFundoWidth = imgFundo.clientWidth;
     degrade2.style.width = `${imgFundoWidth}px`
   };
-
+  
   function proximaImagemCarrossel() {
     posicaoAtual++;
     if (posicaoAtual >= carrocel.length) {
