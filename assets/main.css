@@ -134,20 +134,23 @@ body {
     z-index: 99;
     border: none;
     outline: none;
-    background-color: rgb(27, 145, 139);
+    background-color: rgb(255, 115, 0);
     color: white;
     cursor: pointer;
     padding: 15px;
     border-radius: 50%;
     width: 4rem;
     height: 4rem;
-    font-size: 18px;
     transition: .3s;
 }
 
+.meuBtn>*{
+    font-size: 2rem;
+}
+
 .meuBtn:hover {
-    background-color: rgb(0, 255, 242);
-    color: black;
+    background-color: black;
+    color: rgb(255, 115, 0);
 }
 
 
