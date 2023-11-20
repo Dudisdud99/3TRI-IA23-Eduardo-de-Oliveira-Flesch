@@ -204,21 +204,24 @@ async function carregarCaixas() {
 
 function adicionarEventListeners() {
   const caixasClick = document.querySelectorAll('.caixa');
-  const dialog = document.querySelector(".dialog");
+  const modal = document.querySelector(".modal");
   const fechar = document.querySelector(".fechar");
 
   caixasClick.forEach(caixa => {
     caixa.addEventListener('click', () => {
-      dialog.style.visibility = 'visible';
+      modal.style.visibility = 'visible';
       document.body.style.overflow = 'hidden';
     });
   });
 
-  dialog.addEventListener('close', () => {
+  modal.addEventListener('close', () => {
     document.body.style.overflow = '';
   });
 
-  fechar.addEventListener("click", () => dialog.style.visibility = 'hidden');
+  fechar.addEventListener('click', () => {
+    modal.style.visibility = 'hidden';
+    document.body.style.overflowY = 'scroll';
+  });
 }
 
 carregarCaixas();
