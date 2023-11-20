@@ -204,21 +204,21 @@ async function carregarCaixas() {
 
 function adicionarEventListeners() {
   const caixasClick = document.querySelectorAll('.caixa');
-  const dialog = document.querySelector("dialog");
+  const modal = document.querySelector(".modal");
   const fechar = document.querySelector(".fechar");
 
   caixasClick.forEach(caixa => {
     caixa.addEventListener('click', () => {
-      dialog.showModal();
+      modal.showModal();
       document.body.style.overflow = 'hidden';
     });
   });
 
-  dialog.addEventListener('close', () => {
+  modal.addEventListener('close', () => {
     document.body.style.overflow = '';
   });
 
-  fechar.addEventListener("click", () => dialog.close());
+  fechar.addEventListener("click", () => modal.close());
 }
 
 carregarCaixas();
@@ -243,3 +243,9 @@ function moverCarrocel(direcao) {
     behavior: 'smooth'
   });
 }
+
+
+const dialog = document.querySelector(".dialog")
+const btDialog = document.querySelector(".dialog span")
+
+btDialog.addEventListener("click", () => dialog.close());
