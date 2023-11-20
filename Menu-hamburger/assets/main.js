@@ -196,24 +196,24 @@ async function carregarCaixas() {
 }
 
 // function atualizarQuantidadeCaixas() {
-//   const quantidadeCaixas = document.querySelectorAll('.caixa').length;
-//   document.documentElement.style.setProperty('--quantidade-caixas', quantidadeCaixas);
-// }
-
-// atualizarQuantidadeCaixas();
-
-function adicionarEventListeners() {
-  const caixasClick = document.querySelectorAll('.caixa');
-  const modal = document.querySelector(".modal");
-  const fechar = document.querySelector(".fechar");
-
-  caixasClick.forEach(caixa => {
-    caixa.addEventListener('click', () => {
+  //   const quantidadeCaixas = document.querySelectorAll('.caixa').length;
+  //   document.documentElement.style.setProperty('--quantidade-caixas', quantidadeCaixas);
+  // }
+  
+  // atualizarQuantidadeCaixas();
+  
+  function adicionarEventListeners() {
+    const caixasClick = document.querySelectorAll('.caixa');
+    const modal = document.querySelector(".modal");
+    const fechar = document.querySelector(".fechar");
+    
+    caixasClick.forEach(caixa => {
+      caixa.addEventListener('click', () => {
       modal.showModal();
       document.body.style.overflow = 'hidden';
     });
   });
-
+  
   modal.addEventListener('close', () => {
     document.body.style.overflow = '';
   });
@@ -227,25 +227,29 @@ function moverCarrocel(direcao) {
   const caixaWidth = document.querySelector('.caixa').offsetWidth;
   const espacoEntreCaixas = 15;
   const elementosParaMover = 5;
-
+  
   const scrollAmount = (caixaWidth + espacoEntreCaixas) * elementosParaMover;
   const currentPosition = carrocelThumb.scrollLeft;
   let newPosition;
-
+  
   if (direcao === 1) {
     newPosition = currentPosition + scrollAmount;
   } else {
     newPosition = currentPosition - scrollAmount;
   }
-
+  
   carrocelThumb.scrollTo({
     left: newPosition,
     behavior: 'smooth'
   });
 }
 
+function fecharDialog(){
+  const dialog = document.querySelector(".dialog")
+  const btDialog = document.querySelector(".fecharDialog")
 
-const dialog = document.querySelector(".dialog")
-const btDialog = document.querySelector(".dialog span")
+  dialog.show();
 
-btDialog.addEventListener("click", () => dialog.close());
+  btDialog.addEventListener("click", () => dialog.close());
+}
+ fecharDialog ()

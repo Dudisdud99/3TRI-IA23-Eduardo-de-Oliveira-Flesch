@@ -532,6 +532,14 @@ footer>:nth-child(1){
     z-index: 7;
     background: transparent;
     border: none;
+
+}
+
+.dialog:not([open]) {
+    opacity: 0;
+    transform: scale(0.9);
+    pointer-events: none;
+
 }
 
 .dialog>div{
